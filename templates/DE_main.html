@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Start main-content -->
+<div class="main-content">
+    <!-- Section: home -->
+    <section id="home">
+        <div class="container-fluid p-0">
+            <!-- Slider Revolution Start -->
+            <div class="rev_slider_wrapper" style="overflow: visible;">
+                <div class="rev_slider rev_slider_default revslider-initialised tp-simpleresponsive" data-version="5.0" style="margin-top: 0px; margin-bottom: 0px;" data-slideactive="rs-2">
+                    
+                    <ul >
+
+                        <!-- LAYERS -->
+                        <li>
+                            <!-- LAYER NR. 1 -->
+                            {% if message != None  %}    
+                            <div class="alert alert-success " role="alert">
+                                <strong>Car Registered Successfully..!</strong> Admin will connect you shortly.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {% endif %}
+                            <div style="color: white; position: absolute; visibility: visible; left: 400px; top: 110px; z-index: 7;">
+                                
+                                <div class="tp-loop-wrap" style="position:absolute;">
+                                    
+                                    <div class="tp-mask-wrap" style="position: absolute; overflow: hidden; transform: matrix(1, 0, 0, 1, 0, 0); height: auto; width: auto;">
+                                        <div class="tp-caption tp-resizeme text-uppercase  bg-dark-transparent-6 text-white font-raleway pl-30 pr-30" id="rs-2-layer-1" data-x="[&#39;center&#39;]" data-hoffset="[&#39;0&#39;]" data-y="[&#39;middle&#39;]" data-voffset="[&#39;-90&#39;]" data-fontsize="[&#39;28&#39;]" data-lineheight="[&#39;54&#39;]" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight: 400; border-radius: 30px; visibility: inherit; transition: none 0s ease 0s; line-height: 54px; border-width: 0px; margin: 0px; padding: 0px 30px; letter-spacing: 0px; font-size: 28px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
+                                            <b>perfect Cars for</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="col-lg-12 p-0" src="/static/square2.jpg"/>
+                            <!-- LAYER NR. 2 -->
+                            <div style="color: aliceblue; position: absolute; visibility: visible; left: 400px; top: 160px; z-index: 7;">
+                                <div class="tp-loop-wrap" style="position:absolute;">
+                                    <div class="tp-mask-wrap" style="position: absolute; overflow: hidden; transform: matrix(1, 0, 0, 1, 0, 0); height: auto; width: auto;">
+                                        <div class="tp-caption tp-resizeme text-uppercase bg-theme-colored-transparent text-white font-raleway pl-30 pr-30" id="rs-2-layer-2" data-x="[&#39;center&#39;]" data-hoffset="[&#39;0&#39;]" data-y="[&#39;middle&#39;]" data-voffset="[&#39;-20&#39;]" data-fontsize="[&#39;48&#39;]" data-lineheight="[&#39;70&#39;]" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 7; white-space: nowrap; font-weight: 700; border-radius: 30px; visibility: inherit; transition: none 0s ease 0s; line-height: 70px; border-width: 0px; margin: 0px; padding: 0px 30px; letter-spacing: 0px; font-size: 48px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
+                                            your next trip
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- LAYER NR. 2 -->
+                        <form method="POST" action="{% url 'carDetail' %}">
+                            {% csrf_token %}
+                            <div style="color: black; position: absolute; visibility: visible; left: 400px; top: 240px; z-index: 7;">
+                                <div style="background: #fff; border-radius: 20px; ">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-2">
+                                                <input type="text" placeholder="location " name="location" style="border: none; margin: 10px 22px 10px 22px;">
+                                            </div>
+                                            <div class="col-md-1 pt-10">
+                                                <span>|</span>
+                                            </div>
+                                            <div class="col-md-2 mr-15">
+                                                <input type="date" name="trip-start" min="2023-4-18" max="2023-12-31" style="margin: 10px;">
+                                            </div>
+                                            <div class="col-md-1 ml-15 pt-10">
+                                                <span style="margin: 10px;">~~</span>
+                                            </div>
+                                            <div class="col-md-2 mr-15">
+                                                <input type="date" name="trip-end" min="2023-4-18" max="2023-12-31" style="margin: 10px;">
+                                            </div>
+                                            <div class="col-md-2" style="color: #fff; background-color: royalblue; border-radius:0 20px 20px 0; height: 46px; float: right;padding: 10px 10px 10px 40px;">
+                                            <button style="color: #fff; background-color: royalblue; border:none;" type="submit">
+                                                Find
+                                            </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                            <!-- LAYER NR. 3 -->
+                            <div style="color: white; position: absolute; visibility: visible; left: 536px; top: 302px; z-index: 5;">
+                                <div class="tp-loop-wrap" style="position:absolute;">
+                                    <div class="tp-mask-wrap" style="position: absolute; overflow: hidden; transform: matrix(1, 0, 0, 1, 0, 0); height: auto; width: auto;">
+                                        <div class="tp-caption tp-resizeme text-white text-center" id="rs-2-layer-3" data-x="[&#39;center&#39;]" data-hoffset="[&#39;0&#39;]" data-y="[&#39;middle&#39;]" data-voffset="[&#39;50&#39;]" data-fontsize="[&#39;16&#39;,&#39;18&#39;,24&#39;]" data-lineheight="[&#39;28&#39;]" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 5; white-space: nowrap; letter-spacing: 0px; font-weight: 400; visibility: inherit; transition: none 0s ease 0s; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; font-size: 16px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform-origin: 50% 50% 0px;">
+                                           <span style="background: rgb(74, 74, 74, 0.6); font-size: large;">Every day we bring smile to millions of people in the world<br>  by making them dive car they love.</span> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LAYER NR. 4 -->
+                            <div style="color: aliceblue;position: absolute; visibility: visible; left: 696px; top: 380px; z-index: 5;">
+                                <div class="tp-loop-wrap" style="position:absolute;">
+                                    <div class="tp-mask-wrap" style="position: absolute; overflow: hidden; transform: matrix(1, 0, 0, 1, 0, 0); height: auto; width: auto;">
+                                        <div>
+                                            <a class="btn btn-default btn-circled pl-20 pr-20" href="/login" style="transition: none 0s ease 0s; line-height: 18px; border-width: 1px; margin: 0px; padding: 8px 20px; letter-spacing: 1px; font-weight: 400; font-size: 13px;">Login Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    <!-- Section: home-boxes -->
+    <div class="row">
+        <div style="display: inline-flex; padding: 10px; background-color: #333;" class="col-md-12">
+            <div class="container">
+                <div class="col-md-4 ">
+                    <h4 style="color:white ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXPERT ENGINEERS</h4>
+                    <p style="text-align;">Expert Mechanical Services has been<br>&nbsp;&nbsp; &nbsp; providing heating and cooling<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; solutions in Calgary</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 style="color:#fff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LATEST LOOTS</h4>
+                    <p style="text-align;">Expert Mechanical Services has been<br>&nbsp;&nbsp; &nbsp; providing heating and cooling<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; solutions in Calgary</p>
+                </div>
+                <div class="col-md-4">
+                    <h4 style="color:#fff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QUICK DELIVERY</h4>
+                    <p style="text-align">Expert Mechanical Services has been<br>&nbsp;&nbsp; &nbsp; providing heating and cooling<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; solutions in Calgary</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-6 mt-20">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 pl-0">
+                                <div class="img-hover-border mt-sm-40">
+                                    <img class="img-fullwidth" src="/static/square1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 pl-0 pr-0">
+                                <div class="img-hover-border mt-sm-30">
+                                    <img class="img-fullwidth" src="/static/square2.jpg" alt="">
+                                </div>
+                                <div class="img-hover-border mt-15 mt-sm-30">
+                                    <img class="img-fullwidth" src="/static/a4.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-details">
+                            <h2 class="font-36 mt-0"> Welcome to <span class="text-theme-colored">Quick Rent</span> Enjoy your drive</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, odioserunt provident maiores consectetur adipisicing elit. Aliquam odio dese runtesseu provident maiores libero porro dolorem est. Velit necessitatibus fugiat error incidunt excepturi doloribus officia aspernatur quod libero  Velit necessitatibus fugiat error incidunt excepturi doloribus officia</p>
+                            <div class="singnature mt-20">
+                                <img src="/static/signature.png" alt="img1">
+                            </div>
+                            <a href="" class="btn btn-flat btn-colored btn-theme-colored mt-15 mr-15">Read More</a><a href="" class="btn btn-flat btn-colored btn-default btn-theme-colored mt-15">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Divider: Clients -->
+</div>
+<!-- end main-content --> 
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<section style="background-color: #e3dfdf; padding:50px">
+     <div class="row ml-150">
+<!--main-->
+{% for i in carData %}
+        <div class="col-md-3" style="margin-bottom:10px; margin:25px">
+        <form method="POST" action="{% url 'moreInfo' %}">
+            {% csrf_token %} 
+            <div class="carDetail" style="background-color: #fff; border-radius:15px; padding:10px;  display: flex;  flex-wrap: wrap;">
+                <img src="{{i.carImages}}" style="width: 300px; height:169px; margin:5px"/>              
+                    <div class="col-md-8">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif;" name="carName" value="{{i.carName | capfirst}}">{{i.carName | capfirst}}</h4>
+                        <p style=" font-size: 70%;">{{i.trasmission | capfirst}} . {{i.fuleType | capfirst}} . {{i.seats}} Seats</p>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif; text-align:right;">₹{{i.carRent}}/hr</h4>
+                    </div>
+                    
+                        <input type="hidden" name="n1" value="{{i.id}}">
+                        <input type="hidden" name="n2" value="{{totalHrs}}">
+                
+                <div class="col-md-12" style="background-color: #333;  border-radius:15px; padding:10px;">
+                    <button type="submit" style="color:#fff; background-color: #333 ; border:none">More Info</button>
+                </div>
+            </div>
+        </form>
+        </div>
+{%empty%}
+<h3>No Data Found</h3>
+
+{% endfor %}
+<!-- main-->
+     </div>
+</section>
+{% endblock %} 

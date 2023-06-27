@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- Start main-content -->
+        <div class="main-content" style="background-image: url(/static/square4.jpg); background-repeat: no-repeat; background-size: 100%; margin-top: 80px;">
+            <section id="home">
+            </section>
+            <section class="divider">
+                <div class="container pt-0" style="background-color:#fff">
+                    <div class="row mb-60 bg-deep">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="contact-info text-center pt-60 pb-60 border-right" style="background-color:#ddd">
+                                <h1> <i class="fa fa-phone mb-10 text-theme-colored"></i></h1>
+                                <h4>Call Us</h4>
+                                <h6 class="text-gray">Phone: +91 82000 92552</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="contact-info text-center  pt-60 pb-60 border-right" style="background-color:#ddd">
+                                <h1>
+                                    <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
+                                </h1>
+                                <h4>Address</h4>
+                                <h6 class="text-gray">SAL College Of Engineering, Sola, Ahmedabad, Gujarat, India</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            <div class="contact-info text-center  pt-60 pb-60" style="background-color:#ddd">
+                                <h1>
+                                    <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
+                                </h1>
+                                <h4>Email</h4>
+                                <h6>200670131023.prathamesh@gmail.com</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-10 p-20">
+
+
+                        <h4 class="mt-0 mb-30 line-bottom">Interested in discussing?</h4>
+                        <!-- Contact Form -->
+                        <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post" novalidate="novalidate">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Name <small>*</small></label>
+                                        <input id="form_name" name="form_name" class="form-control" type="text" placeholder="Enter Name" required="" aria-required="true">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="form_email">Email <small>*</small></label>
+                                        <input id="form_email" name="form_email" class="form-control required email" type="email" placeholder="Enter Email" aria-required="true">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Subject <small>*</small></label>
+                                        <input id="form_subject" name="form_subject" class="form-control required" type="text" placeholder="Enter Subject" aria-required="true">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="form_phone">Phone</label>
+                                        <input id="form_phone" name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form_name">Message</label>
+                                <textarea id="form_message" name="form_message" class="form-control required" rows="5" placeholder="Enter Message" aria-required="true"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="hidden" value="">
+                                <button type="button" class="btn btn-dark btn-theme-colored btn-flat mr-5">Send your message</button>
+                                <button type="reset" class="btn btn-default btn-flat btn-theme-colored">Reset</button>
+                            </div>
+                        </form>
+
+                        <!-- Contact Form Validation-->
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Section: login -->
+            <!-- Divider: Clients -->
+        </div>
+        <!-- end main-content --> 
+{% endblock %}

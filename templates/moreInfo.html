@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+<section style="background-color: #e3dfdf; padding:50px">
+     <div class="row">
+<!--main-->
+        <div class="col-md-8" style="margin:20px">
+            <div class="carDetail" style="background-color: #fff; border-radius:15px; padding:10px;  display: flex;  flex-wrap: wrap;">
+                <img src="{{carData.carImages}}" style="width: auto; height:500px; margin:5px"/>              
+                    <div class="col-md-8">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif;">{{carData.carName}}</h4>
+                        <p style=" font-size: 70%;">{{carData.trasmission | capfirst}} . {{carData.fuleType | capfirst}} . {{carData.seats}} Seats . Air Conditioning . Air Freshener . Airbags . Ventilated front seats . Anti-lock Braking System (ABS) . Power Windows .  USB charger</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif; text-align:right;">₹{{carData.carRent}}/hr</h4>
+                    </div>
+                {% comment %} <div class="col-md-12" style="background-color: #333;  border-radius:15px; padding:10px;" >
+                    <a href="/" style="color:#fff;">More Info</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
+        <div class="col-md-3" style="margin:20px">
+            <div class="carDetail" style="background-color: #fff; border-radius:15px; padding:10px;  display: flex;  flex-wrap: wrap;">
+                    <div class="col-md-8">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif;">Total Fare:</h4>
+                        <p style=" font-size: 70%;">total fare contains all your charges including damage and protaction</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 style="font-family: Arial, Helvetica, sans-serif; text-align:right;">₹{{totalRent}}</h4>
+                    </div>
+                {% comment %} <div class="col-md-12" style="background-color: #333;  border-radius:15px; padding:10px;" >
+                    <a href="/" style="color:#fff;">More Info</a>
+                </div> {% endcomment %}
+            </div>
+
+            <div class="carDetail" style="background-color: #fff; border-radius:15px; padding:10px;  display: flex;  flex-wrap: wrap; margin-top:15px;">
+                <div class="col-md-12">
+                    <h4 style="font-family: Arial, Helvetica, sans-serif;">Fare Summary:-</h4>
+                    <div>
+                        <div class="col-md-8">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">Trip Fare :</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">₹{{tripFare}}</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-8">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">Convenience Fee :</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">₹100</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-8">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">Refundable Deposit :</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">₹0</h5>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-8">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">Damage Protection :</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">₹{{damageProtection}}</h5>
+                        </div>
+                    </div>
+                    <p>-------------------------------------------------------</p>
+                    <div>
+                        <div class="col-md-8">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif; color:green">Total Fare:</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5 style="font-family: Arial, Helvetica, sans-serif;">₹{{totalRent}}</h5>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-md-12" style="background-color: #333;  border-radius:15px; padding:10px; margin-top:15px;" >
+                <a href="/home/?message=success" style="color:#fff;">
+                    <p style="text-align:center; font-size:20px; ">
+                        Rent Now
+                    </p>
+                </a>
+            </div>
+        </div> 
+<!-- main-->    
+     </div>
+</section>
+{% endblock %} 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-mobile nivo-lightbox-notouch">
+<head>
+    <title>Quick Rent</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/static/style-main.css" rel="stylesheet" type="text/css">
+    <style>
+        *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[type="date"]{
+    color: #333;
+    border: none;
+    outline: none;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body class="" data-new-gr-c-s-check-loaded="14.1086.0" data-gr-ext-installed="">    
+    <div id="wrapper" class="clearfix">
+        <!-- preloader -->
+        <div id="preloader" style="display: none;">
+            <div id="spinner">
+                <div class="preloader-dot-loading">
+                    <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endcomment %}
+        <!-- Header -->
+        <header class="header">
+            <div class="header-nav">
+                <div class="header-nav-wrapper bg-silver-light">
+                    <div class="container">
+                        <nav id="menuzord-right" class="menuzord default no-bg menuzord-responsive">
+                            <a href="javascript:void(0)" class="showhide" style="display: none;"><em></em><em></em><em></em></a>
+                            <a class="menuzord-brand pull-left flip pt-10" href="/home"><img src="/static/logo.png" style="display: 300%;"></a>
+                            <ul class="menuzord-menu" style="max-height: 400px; display: inline-flex; float: right; ">
+                                <li class="{%if request.path == '/home/'%}active{% endif %}">
+                                    <a href="/home">Home<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+                                </li>
+                                <li class="{%if request.path == '/aboutus/'%}active {% endif %}">
+                                    <a href="/aboutus">About Us<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+                                </li>
+                                <li class="{%if request.path == '/contact/'%}active {% endif %}">
+                                    <a href="/contact">Contact<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+                                </li>
+                                <li class="{%if request.path == '/'%}active {% endif %}">
+                                    <a href="/signup">LogOut<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+                                </li>
+                                <li class="scrollable-fix"></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div><div></div>
+            </div>
+        </header>

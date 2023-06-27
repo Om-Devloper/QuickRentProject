@@ -1,0 +1,122 @@
+        <!-- Start main-content -->
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-mobile nivo-lightbox-notouch">
+<head>
+    <title>Quick Rent</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="/static/style-main.css" rel="stylesheet" type="text/css">
+    <style>
+        *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+input[type="date"]{
+    color: #333;
+    border: none;
+    outline: none;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: #ffffff;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body class="" data-new-gr-c-s-check-loaded="14.1086.0" data-gr-ext-installed="">    
+    <div id="wrapper" class="clearfix">
+        <!-- preloader -->
+        <header class="header">
+            <div class="header-nav">
+                <div class="header-nav-wrapper bg-silver-light">
+                    <div class="container">
+                        <nav id="menuzord-right" class="menuzord default no-bg menuzord-responsive">
+                            <a href="javascript:void(0)" class="showhide" style="display: none;"><em></em><em></em><em></em></a>
+                            <a class="menuzord-brand pull-left flip pt-10" href="/home"><img src="/static/logo.png" style="display: 300%;"></a>
+                        </nav>
+                    </div>
+                </div><div></div>
+            </div>
+        </header>
+        <!-- Start main-content -->
+        <div class="main-content" style="background-image: url(/static/a4.jpg); background-repeat: no-repeat; background-size: 100%; margin-top: 20px;">
+            <section id="home">
+                     
+            </section>
+
+            <!-- Section: login -->
+            <section id="about">
+                <div class="container pt-0 pb-0" >
+                    <div class="container"style="">
+                        <div class="row">
+                            <div class="col-md-3" style="height:10px">
+                                
+                            </div>
+                            <div class="col-md-6 row" style="margin-left:auto;margin-right:auto;background-color:#fff">
+                                    <h2 class="pl-20">
+                                    Sign Up
+                                    <span class="text-theme-colored">
+                                        new account
+                                    </span>
+                                </h2>
+                                    <form method="POST" action="{% url 'signup' %}" class="pl-20">
+                                        {% csrf_token %}
+                                        <div class="col-md-12 mt-20">
+                                            <span class=" font-">Name</span>
+                                        </div>
+                                        <div class="col-md-12 mt-5">
+                                            <input type="text" class="col-md-11 p-10" name="name" placeholder="Name" style="border-radius:10px; border-color:#ccc"  required>
+                                        </div>
+                                        <div class="col-md-12 mt-20">
+                                            <span class=" font-">Enter Email ID</span>
+                                        </div>
+                                        <div class="col-md-12 mt-5">
+                                            <input type="email" class="col-md-11 p-10" name="email" placeholder="Email" style="border-radius:10px; border-color:#ccc"  required>
+                                        </div><br />
+                                        <br />
+                                        <div class="col-md-12 mt-20">
+                                            <div class="col-md-12" style="height:10px"></div>
+                                            <span class=" font-">Enter password</span>
+                                        </div>
+                                        <div class="col-md-12 mt-5 mb-15">
+                                            <input type="password" name='pass1' class="col-md-11 p-10" placeholder="password" style="border-radius:10px; border-color:#ccc"  required>
+                                        </div>
+                                        <br />
+                                        <div class="col-md-12 mt-20">
+                                            <span class=" font-">Confirm password</span>
+                                        </div>
+                                        <div class="col-md-12 mt-5 mb-15">
+                                            <input type="password" name='pass2' class="col-md-11 p-10" placeholder="password" style="border-radius:10px; border-color:#ccc"  required>
+                                        </div>
+                                        <div class="col-md-12 p-0 m-5">
+                                            <div class="col-md-12" style="height:10px"></div>
+
+                                            <div class="col-md-6">
+
+                                                <input type="checkbox" style="height:15px;width:15px;margin-right:10px" />
+                                                <span>Remember me</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+
+                                            <button type="submit" style="background-color: #333;border-radius:10px;border-color:#fff" class="col-md-11 p-10">
+                                                <span style="color:#fff; margin:10px ">
+                                                    CREAT NEW ACCOUNT
+                                                </span>
+                                            </button>
+                                            <div class="col-md-12" style="height:20px"></div>
+
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="col-md-3"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Divider: Clients -->
+        </div>
+        <!-- end main-content --> 
+        {% include "footer.html" %}  
